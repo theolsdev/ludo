@@ -28,14 +28,17 @@ public class Exemplaire {
     private boolean estLouable;
 
     @ManyToOne()
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "jeu_id")
     private Jeu jeu;
 
-    @OneToMany
-    private List<Reservation> reservations;
+    // @OneToMany
+    // private List<Reservation> reservations;
+    @ManyToOne
+    @JoinColumn(name = "reservation_id")
+    private Reservation reservation;
 
-    @OneToMany
-    private List<Exemplaire> exemplaires;
+    @OneToMany(mappedBy = "exemplaire")
+    private List<LocationExemplaire> locationExemplaires;
 
 }
 

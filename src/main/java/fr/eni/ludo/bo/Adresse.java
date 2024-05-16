@@ -29,8 +29,7 @@ public class Adresse {
     @Column
     private String ville;
 
-    @OneToOne
-    @JoinColumn(name = "id")
+    @OneToOne(mappedBy = "adresse")
     private Client client;
 
 }

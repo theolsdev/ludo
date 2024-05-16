@@ -34,4 +34,8 @@ public class Jeu {
     @OneToMany(mappedBy = "jeu")
     private List<Exemplaire> exemplaires;
 
+    @ManyToOne
+    @JoinColumn(name = "genre_id")
+    private Genre genre;
+
 }

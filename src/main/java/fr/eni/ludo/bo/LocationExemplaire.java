@@ -28,11 +28,11 @@ public class LocationExemplaire {
     private double prixFinal;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "exemplaire_id")
     private Exemplaire exemplaire;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "location_id")
     private Location location;
 
 }

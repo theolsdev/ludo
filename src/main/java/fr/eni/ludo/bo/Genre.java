@@ -24,7 +24,9 @@ public class Genre {
     @Column()
     private String libelle;
 
-    @ManyToMany(mappedBy = "genre")
+    // @ManyToMany(mappedBy = "genre")
+    // private List<Jeu> jeux;
+    @OneToMany(mappedBy = "genre")
     private List<Jeu> jeux;
 
 }

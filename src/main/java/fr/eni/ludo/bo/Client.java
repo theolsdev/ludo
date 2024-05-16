@@ -6,11 +6,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 
-@Data
+
+
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+
 @Entity
 @Table(name="client")
 public class Client extends Utilisateur {
@@ -19,7 +21,17 @@ public class Client extends Utilisateur {
     private String tel;
 
     @OneToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "utilisateur_id")
+    private Utilisateur utilisateur;
+
+    @OneToOne
+    @JoinColumn(name = "adresse_id")
     private Adresse adresse;
+
+    @OneToMany(mappedBy = "client")
+    private List<Reservation> reservations;
+
+    @OneToMany(mappedBy = "client")
+    private List<Location> locations;
 
 }

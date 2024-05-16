@@ -32,7 +32,11 @@ public class Location {
     private List<LocationExemplaire> locationExemplaires;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "client_id")
     private Client client;
+
+    @ManyToOne
+    @JoinColumn(name = "utilisateur_id")
+    private Utilisateur utilisateur;
 
 }

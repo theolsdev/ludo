@@ -28,8 +28,11 @@ public class Reservation {
     @OneToMany(mappedBy = "reservation")
     private List<Exemplaire> exemplaires;
 
-    @ManyToOne()
-    @JoinColumn(name = "id")
-    private Client client;
+    @ManyToOne
+    @JoinColumn(name = "utilisateur_id")
+    private Utilisateur utilisateur;
 
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private Client client;
 }
